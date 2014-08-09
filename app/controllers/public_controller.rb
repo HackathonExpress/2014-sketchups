@@ -4,6 +4,6 @@ class PublicController < ApplicationController
 
   def landing
 
-    render layout: 'landing'
+    render 'landing', layout: 'landing'
   end
 end
