@@ -1,25 +1,61 @@
 
 <article><!-- our canvas will be inserted here--></article>
 
+<div id="palette">
+  <input class="color">
+  <input type="checkbox" id="ex04" class="{labelOn: 'Dibujar', labelOff: 'Borrar', easing: 'easeOutBounce', duration: 500}" checked="checked" />
+  <label>
+    <input type="radio" name="size" value="1" checked="checked"  />
+    <input type="radio" name="size" value="5" />
+    <input type="radio" name="size" value="10" />
+    <input type="radio" name="size" value="20" />
 
-<%= link_to 'Grabar' , "#", :class => 'btn primary',:id=>'grabar' %>
+  </label>
+
+
+</div>
+
+
+<%= link_to 'Descargar Imagen' , "#", :class => 'btn primary',:id=>'grabar' %>
 
 
 <script type="text/javascript">
  $(document).ready(function () {
+    $('input[name=size]').change(function () {
+        App.ctx.lineWidth = $('input[name=size]:checked').val()
+    })
+
+
+
+     $("#ex04").change(function (element) {
+       if($(this).is(':checked')){
+         App.ctx.globalCompositeOperation = "source-over";
+       }else{
+         App.ctx.globalCompositeOperation = "destination-out";
+       }
+     })
+
+
+     //$("[name='my-checkbox']").bootstrapSwitch();
+      $(":checkbox").iButton();
 
      $("canvas").mouseout(function() {
 		     var canvas = $("canvas")[0]
 		     var img    = canvas.toDataURL("image/png");
 
-             var newdata = img.replace(/^data:image\/png/,'data:application/octet-stream');		     
+             var newdata = img.replace(/^data:image\/png/,'data:application/octet-stream');
 
              $('#grabar').attr('download','sketchups.png').attr('href',newdata);
 
      });
 
 
+     $(".color").change(
+       function(){
+         App.ctx.strokeStyle = '#' + $(".color").val();
+        }
+      );
+
 });
 
 </script>
-
