@@ -11,4 +11,5 @@
 // about supported directives.
 //= require canvas.js
 //= require bootstrap
+//= require_tree ./cpicker
 //= require websocket_rails/main
