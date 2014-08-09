@@ -8,10 +8,18 @@ App = {};
  */
 
 App.init = function() {
+  App.wrap = document.createElement('div');
+  App.wrap.height = 400;
+  App.wrap.width = 800;
+  App.wrap.id = 'wrap';
+
   App.canvas = document.createElement('canvas');
+  App.center = document.createElement('center');
   App.canvas.height = 400;
   App.canvas.width = 800;
-  document.getElementsByTagName('article')[0].appendChild(App.canvas);
+  document.getElementsByTagName('article')[0].appendChild(App.center);
+  App.center.appendChild(App.wrap);
+  App.wrap.appendChild(App.canvas);
   App.ctx = App.canvas.getContext("2d");
   App.ctx.fillStyle = "solid";
   App.ctx.strokeStyle = "#F92672";
