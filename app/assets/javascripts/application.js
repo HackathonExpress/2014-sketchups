@@ -10,5 +10,5 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //= require canvas.js
-//= require bootstrap
+//= require_tree ./cpicker
 //= require websocket_rails/main

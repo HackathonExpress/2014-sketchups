@@ -1,5 +1,6 @@
 
 <article><!-- our canvas will be inserted here--></article>
+<<<<<<< HEAD
 <div style="text-align: left;">
 	<div id="1" style="float: left;">
 	<img src="payaso.jpg" style="width:150px; height:150px">
@@ -28,3 +29,28 @@
 	})
 	
 </script>
+=======
+
+
+<%= link_to 'Grabar' , "#", :class => 'btn primary',:id=>'grabar' %>
+
+
+<script type="text/javascript">
+ $(document).ready(function () {
+
+     $("canvas").mouseout(function() {
+		     var canvas = $("canvas")[0]
+		     var img    = canvas.toDataURL("image/png");
+
+             var newdata = img.replace(/^data:image\/png/,'data:application/octet-stream');		     
+
+             $('#grabar').attr('download','sketchups.png').attr('href',newdata);
+
+     });
+
+
+});
+
+</script>
+
+>>>>>>> 80a0f51dd7adf93cf886d47eeace7b0ff3e6a18e
