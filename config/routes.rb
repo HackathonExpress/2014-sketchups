@@ -1,4 +1,5 @@
 WebsocketTest::Application.routes.draw do
-  get "public/index"
-  root to: "public#index"
+  get "board", to: "public#index"
+  get "public/landing"
+  root to: "public#landing"
 end
