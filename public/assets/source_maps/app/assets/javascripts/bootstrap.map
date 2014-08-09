@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "",
+  "sourceRoot": "",
+  "sources": [
+    "/assets/source_maps/app/assets/javascripts/bootstrap.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,MAAA,CAAO,SAAA,GAAA;AACL,IAAA,CAAA,CAAE,+BAAF,CAAkC,CAAC,OAAnC,CAAA,CAAA,CAAA;WACA,CAAA,CAAE,+BAAF,CAAkC,CAAC,OAAnC,CAAA,EAFK;EAAA,CAAP,CAAA,CAAA;AAAA"
+}
