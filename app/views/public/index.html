@@ -3,6 +3,39 @@
   <%= label_tag "Nombre"%>
   <%= text_field_tag :name %>
   <%= link_to 'Grabar', "#", :class => 'btn primary',:id=>'grabar' %>
+<div style="text-align: left;">
+	<div id="1" style="float: left;">
+	<img src="payaso.jpg" style="width:150px; height:150px">
+	</div>
+	<div id="2" style="float: left;">
+	<img src="payaso2.jpg" style="width:150px; height:150px">
+	</div>
+	<div id="3" style="float: left;">
+	<img src="payaso4.jpg" style="width:150px; height:150px">
+	</div>
+</div>
+
+<script type="text/javascript">
+	$('#1').click(function(){
+		$('#wrap').css('background-image','url(/payaso.jpg)')
+		$('#wrap').css('background-repeat','no-repeat')
+		$('#wrap').css('background-size','800px 400px')
+	})
+	$('#2').click(function(){
+		$('#wrap').css('background-image','url(/payaso2.jpg)')
+		$('#wrap').css('background-repeat','no-repeat')
+	})
+	$('#3').click(function(){
+		$('#wrap').css('background-image','url(/payaso4.jpg)')
+		$('#wrap').css('background-repeat','no-repeat')
+	})
+	
+</script>
+=======
+
+
+<%= link_to 'Grabar' , "#", :class => 'btn primary',:id=>'grabar' %>
+>>>>>>> d0adad95e28f219a1154cfa28c07b609075c4725
 
 
 <script type="text/javascript">
@@ -31,3 +64,4 @@ function saveImage() {
 
 
 
+>>>>>>> 80a0f51dd7adf93cf886d47eeace7b0ff3e6a18e
