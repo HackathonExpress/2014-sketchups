@@ -9,8 +9,8 @@ App = {};
 
 App.init = function() {
 
-  App.color="#F92672";
-  App.operation="#F92672";
+  App.color="#FFFFFF";
+  App.operation=0;
 
   App.wrap = document.createElement('div');
   App.wrap.height = 400;
