@@ -1,25 +1,33 @@
 
 <article><!-- our canvas will be inserted here--></article>
-
-
-<%= link_to 'Grabar' , "#", :class => 'btn primary',:id=>'grabar' %>
+  <%= label_tag "Nombre"%>
+  <%= text_field_tag :name %>
+  <%= link_to 'Grabar', "#", :class => 'btn primary',:id=>'grabar' %>
 
 
 <script type="text/javascript">
- $(document).ready(function () {
-
-     $("canvas").mouseout(function() {
-		     var canvas = $("canvas")[0]
-		     var img    = canvas.toDataURL("image/png");
-
-             var newdata = img.replace(/^data:image\/png/,'data:application/octet-stream');		     
-
-             $('#grabar').attr('download','sketchups.png').attr('href',newdata);
-
-     });
-
-
+$(document).ready(function () {
+  $("#grabar").click(function(){
+    saveImage();
+  })
 });
 
+
+function saveImage() {
+ var canvas = $("canvas")[0]
+ if($("#name").val() !== ""){
+  name = $("#name").val();
+ }else{
+  name = "sketchup";
+ }
+ var image_name = name + ".png";
+ var img    = canvas.toDataURL("image/png");
+ var newdata = img.replace(/^data:image\/png/,'data:application/octet-stream');        
+ $('#grabar').attr('download',image_name).attr('href',newdata);
+}
+
+
 </script>
+
+
 
