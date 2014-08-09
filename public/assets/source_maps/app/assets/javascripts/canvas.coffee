@@ -15,7 +15,7 @@ App.init = ->
   # set some preferences for our line drawing.
   App.ctx.fillStyle = "solid"
   App.ctx.strokeStyle = "#F92672"
-  App.ctx.lineWidth = 3
+  App.ctx.lineWidth = 0.5
   App.ctx.lineCap = "round"
 
   # Sockets!
