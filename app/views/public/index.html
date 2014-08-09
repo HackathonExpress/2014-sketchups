@@ -1,10 +1,14 @@
 <div class="row">
 
 </div>
-  <div class="span9">
-    <%= label_tag "Nombre"%>
-    <%= text_field_tag :name %>
-
+  <div class="span9">  
+    <div class="row form-inline" style="margin-left:60px">
+      <div class="form-group">
+        <%= text_field_tag :name, nil, class: "form-control", placeholder: "Ingresa un nombre" %>
+        <a id="grabar" href="#" class="btn btn-default">Descargar Imagen</a>
+      </div>    
+      
+    </div>
     <article><!-- our canvas will be inserted here--></article>
   </div>
 
@@ -44,10 +48,6 @@
   	<img src="payaso4.jpg" style="width:150px; height:150px">
   	</div>
   </div>
-</div>
-<div class="row">
-  <a id="grabar" href="#" class="btn btn-default">Descargar Imagen</a>
-
 </div>
 
 <script type="text/javascript">
@@ -103,6 +103,7 @@ function saveImage() {
   name = $("#name").val();
  }else{
   name = "sketchup";
+  $("#name").val(name);
  }
  var image_name = name + ".png";
  var img    = canvas.toDataURL("image/png");
