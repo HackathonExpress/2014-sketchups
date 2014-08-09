@@ -8,6 +8,10 @@ App = {};
  */
 
 App.init = function() {
+
+  App.color="#F92672";
+  App.operation="#F92672";
+
   App.wrap = document.createElement('div');
   App.wrap.height = 400;
   App.wrap.width = 800;
@@ -22,7 +26,7 @@ App.init = function() {
   App.wrap.appendChild(App.canvas);
   App.ctx = App.canvas.getContext("2d");
   App.ctx.fillStyle = "solid";
-  App.ctx.strokeStyle = "#F92672";
+  App.ctx.strokeStyle = App.color;
   App.ctx.lineWidth = 0.5;
   App.ctx.lineCap = "round";
   App.dispatcher = new WebSocketRails(window.document.location.host + '/websocket');
