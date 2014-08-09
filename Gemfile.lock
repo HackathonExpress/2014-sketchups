@@ -132,6 +132,8 @@ GEM
       polyglot (>= 0.3.1)
       polyglot (>= 0.3.1)
       polyglot (>= 0.3.1)
+<<<<<<< HEAD
+=======
       polyglot (>= 0.3.1)
       polyglot (>= 0.3.1)
       polyglot (>= 0.3.1)
@@ -152,6 +154,7 @@ GEM
       polyglot (>= 0.3.1)
       polyglot (>= 0.3.1)
       polyglot (>= 0.3.1)
+>>>>>>> 80a0f51dd7adf93cf886d47eeace7b0ff3e6a18e
     twitter-bootstrap-rails (2.2.8)
       actionpack (>= 3.1)
       execjs

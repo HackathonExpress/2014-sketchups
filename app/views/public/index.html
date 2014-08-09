@@ -1,44 +1,75 @@
-<div class="span9">
-  <article><!-- our canvas will be inserted here--></article>
+<div class="row">
+
 </div>
-<div class="span3">
+  <div class="span9">
+    <%= label_tag "Nombre"%>
+    <%= text_field_tag :name %>
 
-  <div id="palette">
-    Color: <input class="color">
-    <input type="checkbox" id="ex04" class="{labelOn: 'Dibujar', labelOff: 'Borrar', easing: 'easeOutBounce', duration: 500}" checked="checked" />
-    Tama&ntilde;o:
-    <label>
-      Pequeño
-      <input type="radio" name="size" value="1" checked="checked"  />
-    </label>
-    <label>
-      Mediano
-      <input type="radio" name="size" value="5" />
-    </label>
-    <label>
-      Grande
-      <input type="radio" name="size" value="10" />
-    </label>
-    <label>
-      Muy Grande
-      <input type="radio" name="size" value="20" />
-    </label>
-
-    </label>
+    <article><!-- our canvas will be inserted here--></article>
   </div>
 
+  <div class="span3">
+
+    <div id="palette">
+      Color: <input class="color">
+      <input type="checkbox" id="ex04" class="{labelOn: 'Dibujar', labelOff: 'Borrar', easing: 'easeOutBounce', duration: 500}" checked="checked" />
+      Tama&ntilde;o:
+      <label>
+        Pequeño
+        <input type="radio" name="size" value="1" checked="checked"  />
+      </label>
+      <label>
+        Mediano
+        <input type="radio" name="size" value="5" />
+      </label>
+      <label>
+        Grande
+        <input type="radio" name="size" value="10" />
+      </label>
+      <label>
+        Muy Grande
+        <input type="radio" name="size" value="20" />
+      </label>
+    </div>
+  </div>
+
+  <div style="text-align: left;">
+  	<div id="1" style="float: left;">
+  	<img src="payaso.jpg" style="width:150px; height:150px">
+  	</div>
+  	<div id="2" style="float: left;">
+  	<img src="payaso2.jpg" style="width:150px; height:150px">
+  	</div>
+  	<div id="3" style="float: left;">
+  	<img src="payaso4.jpg" style="width:150px; height:150px">
+  	</div>
+  </div>
+</div>
+<div class="row">
+  <a id="grabar" href="#" class="btn btn-default">Descargar Imagen</a>
 
 </div>
 
-
-<%= link_to 'Descargar Imagen' , "#", :class => 'btn primary',:id=>'grabar' %>
-
-
 <script type="text/javascript">
+	$('#1').click(function(){
+		$('#wrap').css('background-image','url(/payaso.jpg)')
+		$('#wrap').css('background-repeat','no-repeat')
+		$('#wrap').css('background-size','800px 400px')
+	});
+
+	$('#2').click(function(){
+		$('#wrap').css('background-image','url(/payaso2.jpg)')
+		$('#wrap').css('background-repeat','no-repeat')
+	});
+	$('#3').click(function(){
+		$('#wrap').css('background-image','url(/payaso4.jpg)')
+		$('#wrap').css('background-repeat','no-repeat')
+	});
+
  $(document).ready(function () {
     $('input[name=size]').change(function () {
         App.ctx.lineWidth = $('input[name=size]:checked').val()
-    })
+    });
 
 
 
@@ -50,27 +81,33 @@
        }
      })
 
+    $(":checkbox").iButton();
 
-     //$("[name='my-checkbox']").bootstrapSwitch();
-      $(":checkbox").iButton();
-
-     $("canvas").mouseout(function() {
-		     var canvas = $("canvas")[0]
-		     var img    = canvas.toDataURL("image/png");
-
-             var newdata = img.replace(/^data:image\/png/,'data:application/octet-stream');
-
-             $('#grabar').attr('download','sketchups.png').attr('href',newdata);
-
-     });
-
-
-     $(".color").change(
+      $(".color").change(
        function(){
          App.ctx.strokeStyle = '#' + $(".color").val();
         }
       );
 
 });
+
+$(document).ready(function () {
+  $("#grabar").click(function(){
+    saveImage();
+  })
+});
+
+function saveImage() {
+ var canvas = $("canvas")[0]
+ if($("#name").val() !== ""){
+  name = $("#name").val();
+ }else{
+  name = "sketchup";
+ }
+ var image_name = name + ".png";
+ var img    = canvas.toDataURL("image/png");
+ var newdata = img.replace(/^data:image\/png/,'data:application/octet-stream');
+ $('#grabar').attr('download',image_name).attr('href',newdata);
+}
 
 </script>
